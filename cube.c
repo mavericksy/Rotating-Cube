@@ -6,7 +6,7 @@
 #define SCREEN_HEIGHT 600
 #define COLOUR_WHITE 0xffffffff
 #define COLOUR_BLACK 0x00000000
-#define POINT_SIZE 1
+#define POINT_SIZE 4
 
 #define COORD_SYS_OFFSET_X SCREEN_WIDTH/2
 #define COORD_SYS_OFFSET_Y SCREEN_HEIGHT/2
@@ -18,7 +18,7 @@ typedef struct Point {
 void apply_rotation(struct Point *point, double alpha, double beta, double theta) {
   double rotation_matrix[3][3] = {
       {cos(alpha)*cos(beta),
-       cos(alpha)*sin(beta)*sin(theta)-sin(alpha)*cos(theta),
+       cos(alpha)*sin(beta)*sin(theta) - sin(alpha)*cos(theta),
        cos(alpha)*sin(beta)*cos(theta) + sin(alpha)*sin(theta)},
       {sin(alpha)*cos(beta),
        sin(alpha)*sin(beta)*sin(theta) + cos(alpha)*cos(theta),
